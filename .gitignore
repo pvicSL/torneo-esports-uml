@@ -1,0 +1,7 @@
+# Fichero gitignore para repositorio esports-uml
+
+# Ignorar archivos .log
+*.log
+
+# Ignorar archivos temporales .tmp
+*.tmp
