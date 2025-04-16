@@ -171,57 +171,57 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
 
     Además de la imagen del diagrama en la carpeta, incluyo su representación en texto plano:
 
-+------------------------+			                    +----------------------------------+
-|       Jugador          |           		            |              Equipo              |
-+------------------------+                    	    	+----------------------------------+
-| - idJugador: int       |                    	    	| - idEquipo: int                  |
-| - nombre: String       |      (Agregación)            | - nombreEquipo: String           |	
-| - apellidos: String    | ---------------------------<>| - listaJugadores: List<Jugador>  |
-| - apodoTwitch: String  |                    	    	+----------------------------------+
-| - urlStreaming: String |                       		| + regisEquipo()                  |
-| - emailContacto: String|                   	    	| + incluirJugador()               |
-+------------------------+                   	    	| + eliminarJugador()              |
-| + regisJugador()       |<---------|        |--------->| + mostrarJugadores()             |
-| + buscarJugador()      |          |        |  	    +----------------------------------+
-| + modificarJugador()   |          |        |       		↑		    ↑
-| + borrarJugador()      |          |        |       		|   		|
-+------------------------+   	    |        |			    |   		|
-↑	↑   ↑                           |        |			    |   		|
-|	|	|	             	+--------------------------+    |   		|
-|	|	|		            |      GestionEquipo       |    |   		|
-|	|	|		            +--------------------------+    |   		|
-|	|	|		            | + asignarJugadorAEquipo()|<--------      	|
-|	|	|		            | + elimJugadorDeEquipo()  |    |   |		|
-|	|	|		            | + mostrarJugadores()     |    |   |		|
-|	|	|		            +--------------------------+    |   |		|
-|	|	|					                            	|   |		|	
-|	|	-------------------------------------       --------|   |		|
-|  +-------------------------+              |		|           |   +-------------------------+      
-|  |     RegistroJugador     |              |		|           |   |     RegistroEquipo      |
-|  +-------------------------+              |		|           |   +-------------------------+
-|  | + registrJugador()      |              |		|           |   | + registEquipo()        |
-|  | + modifJugador()        |              |		|           |   | + consulEquipo()        |
-|  | + elimiJugador()        |              |		|           |   +-------------------------+
-|  | + consulJugador()       |              |		|           |		    	↑
-        |  +-------------------------+              | 		|           |		    	|
-        |		↑			                        |		|           |		    	|
-        |		|			                +---------------------+     -------------	|
-        |		|			                |      Consultas      |         		|	|	
-        |		|			                +---------------------+         		|	|
-        |		|			                | + mostrarJugadores()|   	        	|	|
-        |		|			                | + mostrarEquipos()  |  	        	|	|
-        |		|			                +---------------------+            		|	|
-        |	+---------------------------+	    ↑		    ↑		        +----------------------------+
-        |	|       UIJugador           |	    |	        |		        |       UIAdministrador      |         
-        |	+---------------------------+	    |	        |	        	+----------------------------+        
-        |	| + accesoFormRegisJugador()|--------	    	----------------| + accesoFormRegisJugador() |      
-        |	| + mostrarListaJugadores() |					                | + accesoFormRegisEquipo()  |      
-        |	| + mostrarListaEquipos()   |					                | + mostrarFormAsigJugador() |    
-        |	| + mostrarJugador()        |					                | + mostrarListaJugadores()  |      
-        |	| + mostrarEquipo()         |					                | + mostrarListaEquipos()    |    
-        |	+---------------------------+					                | 			                 | 
-        |-------------------------------------------------------------------| 		            	     |
-                                                                            +----------------------------+
+    +------------------------+			                    +----------------------------------+
+    |       Jugador          |           		            |              Equipo              |
+    +------------------------+                    	    	+----------------------------------+
+    | - idJugador: int       |                    	    	| - idEquipo: int                  |
+    | - nombre: String       |      (Agregación)            | - nombreEquipo: String           |	
+    | - apellidos: String    | ---------------------------<>| - listaJugadores: List<Jugador>  |
+    | - apodoTwitch: String  |                    	    	+----------------------------------+
+    | - urlStreaming: String |                       		| + regisEquipo()                  |
+    | - emailContacto: String|                   	    	| + incluirJugador()               |
+    +------------------------+                   	    	| + eliminarJugador()              |
+    | + regisJugador()       |<---------|        |--------->| + mostrarJugadores()             |
+    | + buscarJugador()      |          |        |  	    +----------------------------------+
+    | + modificarJugador()   |          |        |       		↑		    ↑
+    | + borrarJugador()      |          |        |       		|   		|
+    +------------------------+   	    |        |			    |   		|
+    ↑	↑   ↑                           |        |			    |   		|
+    |	|	|	             	+--------------------------+    |   		|
+    |	|	|		            |      GestionEquipo       |    |   		|
+    |	|	|		            +--------------------------+    |   		|
+    |	|	|		            | + asignarJugadorAEquipo()|<--------      	|
+    |	|	|		            | + elimJugadorDeEquipo()  |    |   |		|
+    |	|	|		            | + mostrarJugadores()     |    |   |		|
+    |	|	|		            +--------------------------+    |   |		|
+    |	|	|					                            	|   |		|	
+    |	|	-------------------------------------       --------|   |		|
+    |  +-------------------------+              |		|           |   +-------------------------+      
+    |  |     RegistroJugador     |              |		|           |   |     RegistroEquipo      |
+    |  +-------------------------+              |		|           |   +-------------------------+
+    |  | + registrJugador()      |              |		|           |   | + registEquipo()        |
+    |  | + modifJugador()        |              |		|           |   | + consulEquipo()        |
+    |  | + elimiJugador()        |              |		|           |   +-------------------------+
+    |  | + consulJugador()       |              |		|           |		    	↑
+    |  +-------------------------+              | 		|           |		    	|
+    |		↑			                        |		|           |		    	|
+    |		|			                +---------------------+     -------------	|
+    |		|			                |      Consultas      |         		|	|	
+    |		|			                +---------------------+         		|	|
+    |		|			                | + mostrarJugadores()|   	        	|	|
+    |		|			                | + mostrarEquipos()  |  	        	|	|
+    |		|			                +---------------------+            		|	|
+    |	+---------------------------+	    ↑		    ↑		        +----------------------------+
+    |	|       UIJugador           |	    |	        |		        |       UIAdministrador      |         
+    |	+---------------------------+	    |	        |	        	+----------------------------+        
+    |	| + accesoFormRegisJugador()|--------	    	----------------| + accesoFormRegisJugador() |      
+    |	| + mostrarListaJugadores() |					                | + accesoFormRegisEquipo()  |      
+    |	| + mostrarListaEquipos()   |					                | + mostrarFormAsigJugador() |    
+    |	| + mostrarJugador()        |					                | + mostrarListaJugadores()  |      
+    |	| + mostrarEquipo()         |					                | + mostrarListaEquipos()    |    
+    |	+---------------------------+					                | 			                 | 
+    |-------------------------------------------------------------------| 		            	     |
+                                                                        +----------------------------+
 
 Una vez diseñadas todas las clases y sus atributos, puedo establecer las relaciones que se dan entre ellas:
 
