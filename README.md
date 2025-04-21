@@ -1,7 +1,7 @@
 # Sistema de Gestión de Torneos de eSports 
 ## Autor 
-Patricia Victoria Sanz López
-[Tu perfil de GitHub ](https://github.com/pvicSL/)
+Patricia Victoria Sanz López -->
+[ Perfil de GitHub ](https://github.com/pvicSL/)
 
 ## Descripción del Proyecto 
 
@@ -17,29 +17,33 @@ Para esta actividad, he planteado el sistema de gestión de eSports como si se t
 Además, he planteado que los jugadores también podrían acceder al sistema, para realizar una auto inscripción y consultar la lista de jugadores inscritos o la lista de equipos, por ejemplo. Lo he conceptualizado así porque, sin tener más información en el enunciado, y dado que se trata de eSports, podría darse el caso de que los jugadores de los equipos sean streamers que necesitan acceder a esa información para ofrecérsela a sus suscriptores como aliciente para seguir el torneo.
 
 ¿Quiénes son los actores que interactúan con el sistema?
-    De acuerdo con mi planteamiento del sistema, los actores son: administradores y jugadores.
+
+De acuerdo con mi planteamiento del sistema, los actores son: administradores y jugadores.
 
 ¿Cuáles son las acciones que cada actor puede realizar?
 
-    Administrador: dentro del caso de uso que nos atañe (punto 1 del apartado 2), un administrador puede registrar un equipo, añadir (o eliminar) jugadores a un equipo, consultar la lista de equipos y consultar la lista de jugadores.
+Administrador: dentro del caso de uso que nos atañe (punto 1 del apartado 2), un administrador puede registrar un equipo, añadir (o eliminar) jugadores a un equipo, consultar la lista de equipos y consultar la lista de jugadores.
 
-    Jugador: un jugador podría registrarse en el sistema, consultar la lista de equipos, si se le asigna uno, para ver en cuál se encuentra y consultar la lista de jugadores total o de cada equipo, para saber quiénes son sus rivales.
+Jugador: un jugador podría registrarse en el sistema, consultar la lista de equipos, si se le asigna uno, para ver en cuál se encuentra y consultar la lista de jugadores total o de cada equipo, para saber quiénes son sus rivales.
 
 ¿Cómo se relacionan entre sí las entidades del sistema?
 
-    Entendiendo las entidades como si se tratasen de las que estarían presentes en un diagrama E-R, tendríamos una entidad EQUIPO y otra entidad JUGADOR. Un equipo podría tener entre uno y muchos jugadores, mientras que un jugador pertenece a ningún equipo o solo a uno.
+Entendiendo las entidades como si se tratasen de las que estarían presentes en un diagrama E-R, tendríamos una entidad EQUIPO y otra entidad JUGADOR. Un equipo podría tener entre uno y muchos jugadores, mientras que un jugador pertenece a ningún equipo o solo a uno.
 
-    Además, para poder añadir los jugadores a un equipo, el administrador debe haberlos registrado, o ellos mismo deben haberse registrado. Por lo tanto, la acción de “registrar equipo” tendría una relación de dependencia con respecto a la de “añadir jugadores” (un <<include>>).
+Además, para poder añadir los jugadores a un equipo, el administrador debe haberlos registrado, o ellos mismo deben haberse registrado. Por lo tanto, la acción de “registrar equipo” tendría una relación de dependencia con respecto a la de “añadir jugadores” (un <<include>>).
     
-    Esto nos da una idea un poco más clara sobre el aspecto que va a tener el diagrama de casos de uso.
+Esto nos da una idea un poco más clara sobre el aspecto que va a tener el diagrama de casos de uso.
 
 ## Identificación de los casos de uso y elaboración del diagrama
 Gestión de equipos y jugadores:
-    ▪Registrar equipo.
-    ▪Añadir jugadores a un equipo.
-    ▪Consultar lista de equipos y jugadores.
 
-    Puesto que en el apartado anterior he identificado los actores, entidades y usos para el modelo, a continuación, se incluye el diagrama de casos de uso correspondiente a este subapartado:
+▪Registrar equipo.
+
+▪Añadir jugadores a un equipo.
+
+▪Consultar lista de equipos y jugadores.
+
+Puesto que en el apartado anterior he identificado los actores, entidades y usos para el modelo, a continuación, se incluye el diagrama de casos de uso correspondiente a este subapartado:
 
 ## Diagramas UML 
 ### Diagrama de Casos de Uso 
@@ -54,15 +58,16 @@ Además, el administrador también puede realizar dos tipos de consulta, ‘cons
 Por su parte, el jugador puede auto inscribirse en el sistema (‘registrar jugador’), y realizar consultas de las listas de jugadores y equipos (‘consultar lista de equipos’ y ‘consultar lista de jugadores’), pero no puede hacer nada más en este sistema tal y como lo he planteado.
 
 Los casos de uso son:
-    Registrar jugador: una acción que permite al administrador o a un usuario incluir los datos de un jugador en la base de datos del torneo.
 
-    Registrar equipo: un uso con el que un administrador puede crear un equipo para asignarle posteriormente los jugadores pertinentes.
+Registrar jugador: una acción que permite al administrador o a un usuario incluir los datos de un jugador en la base de datos del torneo.
 
-    Añadir jugadores al equipo: que permite a los administradores incluir jugadores que estén inscritos en la base de datos dentro de un equipo creado.
+Registrar equipo: un uso con el que un administrador puede crear un equipo para asignarle posteriormente los jugadores pertinentes.
 
-    Consultar lista de equipos: disponible para administradores y usuarios, permite consultar la lista de equipos existentes en el torneo.
+Añadir jugadores al equipo: que permite a los administradores incluir jugadores que estén inscritos en la base de datos dentro de un equipo creado.
 
-    Consultar lista de jugadores: permite a administradores y usuarios ver una lista de todos los jugadores inscritos.
+Consultar lista de equipos: disponible para administradores y usuarios, permite consultar la lista de equipos existentes en el torneo.
+
+Consultar lista de jugadores: permite a administradores y usuarios ver una lista de todos los jugadores inscritos.
 
 ## Identificación de clases y relaciones
 ### Diagrama de Clases 
@@ -74,7 +79,7 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
     Clases de entidad (las que permiten modelar los datos):
 
         ▪ Jugador
-        ▪ Equipo
+        
                     +-----------------------------------------------+
                     |                   Jugador                     |
                     +-----------------------------------------------+
@@ -92,6 +97,8 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
                     |   apodoTwitch, urlStreaming, emailContacto)   |
                     | + borrarJugador()                             |
                     +-----------------------------------------------+
+
+        ▪ Equipo
                     +----------------------------------+
                     |              Equipo              |
                     +----------------------------------+
@@ -108,10 +115,7 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
     Clases de control (las que comunican la vista con el modelo de datos):
 
         ▪ RegistroJugador
-        ▪ RegistroEquipo
-        ▪ GestionEquipo
-        ▪ Consultas
-
+        
                     +----------------------------------+
                     |           RegistroJugador        |
                     +----------------------------------+
@@ -121,12 +125,14 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
                     | + consulJugador(int id): Jugador |
                     +----------------------------------+
 
+        ▪ RegistroEquipo
                     +---------------------------------------+
                     |           RegistroEquipo              |
                     +---------------------------------------+
                     | + registEquipo(String nombre): Equipo |
                     +---------------------------------------+
 
+        ▪ GestionEquipo
                     +------------------------------------------------------+
                     |                      GestionEquipo                   |
                     +------------------------------------------------------+
@@ -134,6 +140,7 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
                     | + elimJugadorDeEquipo(int idEquipo, int idJugador)   |
                     +------------------------------------------------------+
 
+        ▪ Consultas
                     +-------------------------------------+
                     |            Consultas                |
                     +-------------------------------------+
@@ -145,7 +152,7 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
     Clases de interfaz (las que presentan las vistas con las que interactúa el usuario):
 
         ▪ InterfazUsuario
-        ▪ InterfazAdministrador
+
                 +---------------------------------------------+
                 |                 UIJugador                   |
                 +---------------------------------------------+
@@ -156,6 +163,7 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
                 | + mostrarEquipo()                           |
                 +---------------------------------------------+
 
+        ▪ InterfazAdministrador
                 +------------------------------------------------+
                 |               UIAdministrador                  |
                 +------------------------------------------------+
@@ -170,23 +178,23 @@ Dado el esquema anterior de casos de uso, y mi planteamiento del sistema, consid
 
 Una vez diseñadas todas las clases y sus atributos, puedo establecer las relaciones que se dan entre ellas:
 
-    Así, pues, habría una relación de agregación entre Equipo y Jugador, puesto que el equipo está formado por una lista de jugadores, pero los jugadores pueden existir en la base de datos, aunque no se les haya asignado aún un equipo (cardinalidad uno a muchos entre equipo y jugador, 1:N; y entre ninguno y uno entre jugador y equipo, 0:1).
+Así, pues, habría una relación de agregación entre Equipo y Jugador, puesto que el equipo está formado por una lista de jugadores, pero los jugadores pueden existir en la base de datos, aunque no se les haya asignado aún un equipo (cardinalidad uno a muchos entre equipo y jugador, 1:N; y entre ninguno y uno entre jugador y equipo, 0:1).
 
-    Habría relación de dependencia entre:
-        RegistroJugador y Jugador
-        RegistroEquipo y Equipo
-        GestionEquipo y Equipo
-        GestionEquipo y Jugador
-        Consultas y Jugador
-        Consultas y Equipo
+Habría relación de dependencia entre:
+    RegistroJugador y Jugador
+    RegistroEquipo y Equipo
+    GestionEquipo y Equipo
+    GestionEquipo y Jugador
+    Consultas y Jugador
+    Consultas y Equipo
 
 La estructura del esquema UML representa todas las clases que he contemplado en el sistema:
 
-    Las entidades Equipo y Jugador aparecen con sus atributos y métodos correspondientes. La relación de agregación entre ellas aparece representada por el rombo en el extremo de la línea, pero he incluido también un texto en caso de que este detalle no se aprecie, ya que su tamaño es bastante reducido.
+Las entidades Equipo y Jugador aparecen con sus atributos y métodos correspondientes. La relación de agregación entre ellas aparece representada por el rombo en el extremo de la línea, pero he incluido también un texto en caso de que este detalle no se aprecie, ya que su tamaño es bastante reducido.
 
-    Las clases de control RegistroJugador, RegistroEquipo, GestionEquipo y Consultas únicamente contienen métodos.
+Las clases de control RegistroJugador, RegistroEquipo, GestionEquipo y Consultas únicamente contienen métodos.
 
-    Las clases de interfaz, UIJugador y UIAdministrador también incluyen métodos.
+Las clases de interfaz, UIJugador y UIAdministrador también incluyen métodos.
 
 ## Estructura del Proyecto (PARTE DE JAVA NO REALIZADA - OPCIONAL)
 
@@ -206,10 +214,10 @@ La estructura del esquema UML representa todas las clases que he contemplado en 
 
 ## Instalación y Ejecución 
 
-    1. Clonar el repositorio:
+1. Clonar el repositorio:
     `git clone https://github.com/pvicSL/torneo-esports-uml.git`
 
-    2. Compilar y ejecutar el proyecto:
+2. Compilar y ejecutar el proyecto:
     `cd src javac es/empresa/torneo/Main.java java es.empresa.torneo.Main`
 
 ## Justificación del diseño Por qué se eligió esa estructura y cómo se organizan las clases.
